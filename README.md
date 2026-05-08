@@ -1,35 +1,44 @@
 # Dogma Cables
 
-Landingsside for Hans Lauridsen, Dogma Cables. Håndlavede lydkabler, 20+ års erfaring.
+Multi-page website for Hans Lauridsen, Dogma Cables. Handmade audio cables, 20+ years of experience.
 
-## Tre temaer
+## Pages
 
-- **Lys** (`index.html`): Cardas-warm, creme baggrund, valnød tekst, kobber accent
-- **Mellem** (`medium.html`): Oiled oak baggrund, bone tekst, messing accent
-- **Mørk** (`dark.html`): Charcoal aften-lytterum, bone tekst, brændt kobber accent
+- `index.html` — Coming-soon teaser (logo + "Coming this summer")
+- `about.html` — About Hans + the Ferrari quote
+- `cables.html` — What Hans builds (speaker, signal, power, custom)
+- `contact.html` — Contact form + direct phone/email
+- `guide.html` — Setup guide for Hans (Cloudflare + GitHub Pages + Formspree). Written in Danish for Hans.
 
-Alle tre deler samme indhold og layout. Skift tema via knapperne øverst på siden.
+## Themes
 
-## Lokalt preview
+Three themes selectable from the header on every page. Choice is saved in localStorage and persists across pages and sessions.
 
-Åbn `index.html` i en browser. Ingen build-step.
+- **Light**: Cardas-warm cream + walnut + copper
+- **Mid**: Oiled oak brown + bone + brass
+- **Dark**: Charcoal evening listening room + bone + burnt copper
+
+## Local preview
+
+Open `index.html` in a browser. No build step.
 
 ## Hosting
 
-Deployes via GitHub Pages: `https://sergentisaf.github.io/Dogma-Hjemmeside/`
+Deployed via GitHub Pages: <https://sergentisaf.github.io/Dogma-Hjemmeside/>
 
-## Kontaktformular
+## Contact form
 
-Bruger Formspree. Erstat `YOUR_FORMSPREE_ID` i `js/form.js` med rigtig endpoint
-fra https://formspree.io/ (gratis, 50 mails/md).
+Uses Formspree. Replace `YOUR_FORMSPREE_ID` in `js/form.js` with the real endpoint
+from <https://formspree.io/> (free, 50 emails/month).
 
-Indtil Formspree er sat op, faller formularen tilbage til `mailto:` så Hans
-stadig kan modtage henvendelser.
+Until Formspree is set up, the form falls back to `mailto:` so Hans still receives
+inquiries.
 
-## Mangler
+## Pending
 
-- Foto af Hans i hero (logo + tekstur som placeholder)
-- "Brev fra Hans" sektion (afventer)
-- Eksakt by i footer (står "Danmark")
-- Materiale-specs i produkt-sektion (skabelon-tekst)
-- CVR i footer (afventer)
+- Photo of Hans at the bench (logo + texture used as placeholder)
+- "Letter from Hans" section (waiting)
+- Exact city in footer (currently "Built in Denmark")
+- Material specs in cables list (template text)
+- CVR number in footer (waiting)
+- Real Formspree ID

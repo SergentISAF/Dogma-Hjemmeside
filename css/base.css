@@ -1,9 +1,10 @@
 /* Dogma Cables — base layout, theme-agnostic.
-   All colors are CSS variables overridden in theme files. */
+   Themes are scoped to body class in themes.css and override these. */
 
 :root {
   --bg: #f2ede3;
   --bg-alt: #ebe3d3;
+  --header-bg: rgba(242, 237, 227, 0.92);
   --text: #3a2a1e;
   --text-muted: #6b5544;
   --accent: #b87333;
@@ -11,6 +12,8 @@
   --border: rgba(58, 42, 30, 0.18);
   --shadow: rgba(58, 42, 30, 0.12);
   --wood-overlay: 0.06;
+  --logo-filter: none;
+  --header-height: 4.5rem;
 }
 
 * {
@@ -75,42 +78,124 @@ a:hover {
   color: var(--accent-strong);
 }
 
-/* Theme switcher */
-.theme-switcher {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
+/* ===== Sticky header ===== */
+.site-header {
+  position: sticky;
+  top: 0;
   z-index: 100;
+  height: var(--header-height);
+  background: var(--header-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.header-inner {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
   display: flex;
-  gap: 0.4rem;
-  background: var(--bg);
-  padding: 0.4rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  box-shadow: 0 2px 8px var(--shadow);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  border: none;
+  flex-shrink: 0;
+}
+
+.header-logo:hover {
+  border: none;
+}
+
+.header-logo img {
+  height: 2.2rem;
+  width: auto;
+  filter: var(--logo-filter);
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.main-nav a {
+  color: var(--text);
+  border-bottom: 2px solid transparent;
+  padding: 0.3rem 0;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+  border-bottom-color: transparent;
+}
+
+.main-nav a.active {
+  border-bottom-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.theme-switcher {
+  display: flex;
+  gap: 0.3rem;
   font-family: 'Lora', serif;
   font-size: 0.85rem;
 }
 
-.theme-switcher a {
-  padding: 0.3rem 0.7rem;
+.theme-switcher button {
+  padding: 0.35rem 0.7rem;
+  background: transparent;
   color: var(--text-muted);
-  border: none;
-  border-radius: 2px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
-.theme-switcher a:hover {
-  background: var(--bg-alt);
+.theme-switcher button:hover {
   color: var(--text);
-  border: none;
+  border-color: var(--accent);
 }
 
-.theme-switcher a.active {
+.theme-switcher button.active {
   background: var(--accent);
   color: var(--bg);
+  border-color: var(--accent);
 }
 
-/* Layout */
+/* Mobile header */
+@media (max-width: 720px) {
+  .site-header {
+    height: auto;
+    padding: 0.6rem 0;
+  }
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+  }
+  .header-logo {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.3rem;
+  }
+  .header-logo img { height: 1.8rem; }
+  .main-nav { gap: 1.2rem; font-size: 0.95rem; }
+  .theme-switcher { width: 100%; justify-content: center; margin-top: 0.3rem; }
+}
+
+/* ===== Layout ===== */
 .container {
   max-width: 880px;
   margin: 0 auto;
@@ -118,23 +203,21 @@ a:hover {
 }
 
 section {
-  padding: 5rem 0;
+  padding: 4.5rem 0;
+}
+
+section.with-divider {
   border-bottom: 1px solid var(--border);
 }
 
-section:last-of-type {
-  border-bottom: none;
-}
-
-/* Hero */
+/* ===== Hero (homepage) ===== */
 .hero {
-  min-height: 70vh;
+  min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 6rem 1.5rem 4rem;
-  border-bottom: 1px solid var(--border);
+  padding: 3rem 1.5rem;
 }
 
 .hero-inner {
@@ -145,14 +228,14 @@ section:last-of-type {
   max-width: 100%;
   width: 540px;
   height: auto;
-  margin-bottom: 1.5rem;
-  filter: var(--logo-filter, none);
+  margin-bottom: 2rem;
+  filter: var(--logo-filter);
 }
 
 .hero-tagline {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  font-size: clamp(1.2rem, 2.6vw, 1.7rem);
   color: var(--text-muted);
   margin-top: 0.5rem;
 }
@@ -165,7 +248,26 @@ section:last-of-type {
   margin: 2rem auto;
 }
 
-/* Quote */
+/* ===== Page header (sub-pages) ===== */
+.page-header {
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-header h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  margin-bottom: 0.5rem;
+}
+
+.page-header .subtitle {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 1.15rem;
+}
+
+/* ===== Quote ===== */
 .quote {
   text-align: center;
   background: var(--bg-alt);
@@ -180,19 +282,6 @@ section:last-of-type {
   max-width: 720px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  position: relative;
-}
-
-.quote blockquote::before,
-.quote blockquote::after {
-  content: '"';
-  font-family: 'Playfair Display', serif;
-  color: var(--accent);
-  font-size: 3rem;
-  line-height: 0.5;
-  vertical-align: middle;
-  display: inline-block;
-  margin: 0 0.3rem;
 }
 
 .quote-attr {
@@ -205,7 +294,7 @@ section:last-of-type {
   letter-spacing: 0.05em;
 }
 
-/* About */
+/* ===== About ===== */
 .about p {
   font-size: 1.05rem;
   margin-bottom: 1.2rem;
@@ -221,7 +310,7 @@ section:last-of-type {
   color: var(--accent);
 }
 
-/* Products */
+/* ===== Products / Cables ===== */
 .products-list {
   list-style: none;
   display: grid;
@@ -246,11 +335,7 @@ section:last-of-type {
   font-size: 0.98rem;
 }
 
-/* Contact */
-.contact {
-  background: var(--bg-alt);
-}
-
+/* ===== Contact form ===== */
 .contact-intro {
   text-align: center;
   margin-bottom: 2rem;
@@ -355,7 +440,7 @@ section:last-of-type {
   border: 1px solid #a0281e;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
   text-align: center;
   padding: 3rem 1.5rem;
@@ -385,11 +470,8 @@ footer a:hover {
   margin: 0 auto 1rem;
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 600px) {
   body { font-size: 17px; }
   section { padding: 3.5rem 0; }
-  .hero { min-height: 60vh; padding: 5rem 1rem 3rem; }
-  .theme-switcher { font-size: 0.75rem; padding: 0.3rem; }
-  .theme-switcher a { padding: 0.25rem 0.5rem; }
 }

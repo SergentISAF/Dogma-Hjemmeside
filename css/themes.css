@@ -1,0 +1,44 @@
+/* All three themes scoped to body class.
+   Loaded after base.css so these win the cascade. */
+
+body.theme-light {
+  --bg: #f2ede3;
+  --bg-alt: #ebe3d3;
+  --header-bg: rgba(242, 237, 227, 0.92);
+  --text: #3a2a1e;
+  --text-muted: #6b5544;
+  --accent: #b87333;
+  --accent-strong: #8a4f1f;
+  --border: rgba(58, 42, 30, 0.18);
+  --shadow: rgba(58, 42, 30, 0.12);
+  --wood-overlay: 0.06;
+  --logo-filter: none;
+}
+
+body.theme-mid {
+  --bg: #5a4632;
+  --bg-alt: #4a3826;
+  --header-bg: rgba(90, 70, 50, 0.92);
+  --text: #e8d9bf;
+  --text-muted: #c4b08e;
+  --accent: #c9a24a;
+  --accent-strong: #e0b85e;
+  --border: rgba(232, 217, 191, 0.2);
+  --shadow: rgba(0, 0, 0, 0.35);
+  --wood-overlay: 0.18;
+  --logo-filter: invert(1) sepia(0.3) saturate(0.6) brightness(1.1);
+}
+
+body.theme-dark {
+  --bg: #1c1a18;
+  --bg-alt: #26221e;
+  --header-bg: rgba(28, 26, 24, 0.92);
+  --text: #e8d9bf;
+  --text-muted: #a89678;
+  --accent: #b87333;
+  --accent-strong: #d68a3e;
+  --border: rgba(232, 217, 191, 0.15);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --wood-overlay: 0.25;
+  --logo-filter: invert(1) sepia(0.2) saturate(0.4) brightness(1.05);
+}
