@@ -65,7 +65,7 @@ When Hans buys his domain and sets up Cloudflare per `guide.html`, point a custo
 Don't fabricate these — leave placeholders or omit until Hans provides them:
 
 - Photo of Hans at the bench (use logo + texture as the hero placeholder)
-- Hans's home city (footer currently says "Built in Denmark")
+- Hans's home city (footer currently says "Hand made in Denmark")
 - CVR number (footer)
 - Material specs for each cable type (`cables.html` uses generic placeholder copy)
 - A signed "letter from Hans" — strongest trust signal we identified, but only if Hans wants to write one

@@ -38,7 +38,7 @@ inquiries.
 
 - Photo of Hans at the bench (logo + texture used as placeholder)
 - "Letter from Hans" section (waiting)
-- Exact city in footer (currently "Built in Denmark")
+- Exact city in footer (currently "Hand made in Denmark")
 - Material specs in cables list (template text)
 - CVR number in footer (waiting)
 - Real Formspree ID
