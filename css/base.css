@@ -283,6 +283,17 @@ body.theme-dark .hero-image .hero-tagline {
   margin-top: 0.5rem;
 }
 
+.hero-subtagline {
+  font-family: 'Lora', serif;
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-top: 2rem;
+  max-width: 38ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hero-rule {
   width: 60px;
   height: 1px;
