@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sådan sætter du Dogma Cables-hjemmesiden op — Guide til Hans</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/theme-lys.css">
+  <style>
+    .guide-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+    }
+    .guide-wrap h1 {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .guide-intro {
+      text-align: center;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .step {
+      background: var(--bg-alt);
+      padding: 2rem 2rem 1.5rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--accent);
+      border-radius: 2px;
+    }
+    .step-number {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 2.4rem;
+      margin-right: 0.6rem;
+      vertical-align: middle;
+      font-size: 1.1rem;
+    }
+    .step h2 {
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+    .step ol, .step ul {
+      margin-left: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .step li {
+      margin-bottom: 0.6rem;
+    }
+    .button-name {
+      display: inline-block;
+      background: var(--text);
+      color: var(--bg);
+      padding: 0.1rem 0.6rem;
+      border-radius: 3px;
+      font-size: 0.92rem;
+      font-family: 'Lora', serif;
+      font-weight: 500;
+    }
+    .field-name {
+      display: inline-block;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.05rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.92rem;
+      font-family: 'Courier New', monospace;
+    }
+    .checklist {
+      background: var(--bg);
+      padding: 1.5rem 2rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      margin-bottom: 3rem;
+    }
+    .checklist h3 {
+      margin-top: 0;
+    }
+    .checklist ul {
+      list-style: none;
+      margin-left: 0;
+    }
+    .checklist li {
+      padding-left: 1.8rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    .checklist li::before {
+      content: '☐';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.2rem;
+      top: -0.1rem;
+    }
+    .tip {
+      background: rgba(184, 115, 51, 0.1);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    .tip strong { color: var(--accent-strong); }
+    .warning {
+      background: rgba(160, 40, 30, 0.08);
+      border-left: 3px solid #a0281e;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    .warning strong { color: #a0281e; }
+    .check {
+      background: rgba(80, 130, 60, 0.1);
+      border-left: 3px solid #5a8538;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    .check strong { color: #3d6024; }
+    code {
+      background: var(--bg);
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+    }
+    .glossary {
+      background: var(--bg);
+      padding: 1.5rem 2rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      margin-top: 3rem;
+    }
+    .glossary dt {
+      font-weight: 600;
+      color: var(--accent-strong);
+      margin-top: 0.8rem;
+    }
+    .glossary dd {
+      margin-left: 0;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted);
+    }
+    .help {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-wrap">
+
+    <h1>Sådan sætter du hjemmesiden op</h1>
+    <p class="guide-intro">En guide til Hans, skrevet uden forudsætninger.<br>Tag et trin ad gangen. Du kan ikke ødelægge noget.</p>
+
+    <div class="checklist">
+      <h3>Hvad skal du bruge?</h3>
+      <ul>
+        <li>En email du tjekker (fx hansmlauridsen@gmail.com)</li>
+        <li>Cirka 100 kroner til at købe et domænenavn</li>
+        <li>30-60 minutter foran computeren</li>
+        <li>En kop kaffe</li>
+      </ul>
+      <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.95rem; color: var(--text-muted);">
+        Du behøver <em>ingen</em> programmerings-erfaring. Vi klikker os igennem.
+      </p>
+    </div>
+
+    <div class="tip">
+      <strong>Vigtigt at vide først:</strong> Selve hjemmesiden er allerede bygget og ligger gratis hos GitHub. Det vi skal nu, er at koble dit eget domænenavn (fx <code>dogmacables.dk</code>) til den, så folk kan finde den. Det går gennem en gratis tjeneste der hedder <strong>Cloudflare</strong>. Tænk på Cloudflare som det skilt der står ved indkørslen til dit hus, så folk kan finde dig.
+    </div>
+
+    <!-- TRIN 1 -->
+    <div class="step">
+      <span class="step-number">1</span>
+      <h2>Køb dit domæne</h2>
+      <p>Et domænenavn er den adresse folk skriver i deres browser. Fx <code>dogmacables.dk</code>.</p>
+      <ol>
+        <li>Åbn <a href="https://www.dandomain.dk" target="_blank" rel="noopener">dandomain.dk</a> (en dansk udbyder, hvis du vil have det på dansk).</li>
+        <li>Skriv det navn du vil have, fx <code>dogmacables.dk</code>, i søgefeltet.</li>
+        <li>Hvis det er ledigt, så tryk <span class="button-name">Køb</span> eller <span class="button-name">Tilføj til kurv</span>.</li>
+        <li>Opret en konto med din email og betal. Et <code>.dk</code>-domæne koster cirka 70-100 kr om året.</li>
+      </ol>
+      <div class="check">
+        <strong>Du er færdig med trin 1 når:</strong> du har modtaget en bekræftelses-mail fra dandomain.dk om at du nu ejer dit domæne.
+      </div>
+    </div>
+
+    <!-- TRIN 2 -->
+    <div class="step">
+      <span class="step-number">2</span>
+      <h2>Opret en Cloudflare-konto</h2>
+      <p>Cloudflare er en gratis tjeneste der hjælper med at sende folk til den rigtige hjemmeside. Det er gratis, og du skal ikke betale for noget.</p>
+      <ol>
+        <li>Åbn <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener">dash.cloudflare.com/sign-up</a>.</li>
+        <li>Skriv din email og et password du kan huske. <strong>Skriv passwordet ned</strong> et sted du kan finde det igen.</li>
+        <li>Tryk <span class="button-name">Create Account</span>.</li>
+        <li>Cloudflare sender en bekræftelses-mail. Åbn din mail-indbakke, find mailen, og klik på linket inde i den.</li>
+      </ol>
+      <div class="check">
+        <strong>Du er færdig med trin 2 når:</strong> du står på en side hos Cloudflare hvor der står <em>"Add a site"</em> eller <em>"Add a domain"</em>.
+      </div>
+    </div>
+
+    <!-- TRIN 3 -->
+    <div class="step">
+      <span class="step-number">3</span>
+      <h2>Tilføj dit domæne til Cloudflare</h2>
+      <ol>
+        <li>På Cloudflare-siden, tryk på <span class="button-name">+ Add a domain</span> (oppe i højre side eller på forsiden).</li>
+        <li>Skriv dit domæne, fx <code>dogmacables.dk</code> (uden <code>www</code> foran), og tryk <span class="button-name">Continue</span>.</li>
+        <li>Vælg den gratis plan: <span class="button-name">Free $0/month</span>. Tryk <span class="button-name">Continue</span>.</li>
+        <li>Cloudflare scanner nu dit domæne. Det tager 30-60 sekunder. Du behøver ikke gøre noget.</li>
+        <li>Når den er færdig, kommer du til en side med en liste over <strong>DNS-records</strong>. Spring videre til trin 5 for at tilføje de rigtige records. Men inden, skal du gøre trin 4.</li>
+      </ol>
+      <div class="tip">
+        <strong>Lige om lidt</strong> giver Cloudflare dig <strong>to navneservere</strong> (de ser ud som <code>noget.ns.cloudflare.com</code>). Skriv dem ned eller hold siden åben. Du skal bruge dem i trin 4.
+      </div>
+    </div>
+
+    <!-- TRIN 4 -->
+    <div class="step">
+      <span class="step-number">4</span>
+      <h2>Skift navneservere hos DanDomain</h2>
+      <p>Det her er det vigtigste trin. Du fortæller dit domæne at "fra nu af lytter du til Cloudflare, ikke DanDomain". Det er som at flytte din post fra ét postkontor til et andet.</p>
+      <ol>
+        <li>Åbn en ny fane og log ind på <a href="https://www.dandomain.dk" target="_blank" rel="noopener">dandomain.dk</a> med din email og password.</li>
+        <li>Find dit domæne i listen over dine køb og klik på det.</li>
+        <li>Find sektionen der hedder <span class="button-name">Navneservere</span> eller <span class="button-name">DNS</span> eller <span class="button-name">Sæt navneservere</span>.</li>
+        <li>Slet de navneservere der står der, og indsæt de <strong>to</strong> Cloudflare gav dig i trin 3 (de der ender på <code>.ns.cloudflare.com</code>).</li>
+        <li>Tryk <span class="button-name">Gem</span> eller <span class="button-name">Opdater</span>.</li>
+        <li>Gå tilbage til Cloudflare-fanen og tryk <span class="button-name">Continue</span> eller <span class="button-name">Done, check nameservers</span>.</li>
+      </ol>
+      <div class="warning">
+        <strong>Vent nu.</strong> Det kan tage alt fra 15 minutter til 24 timer før Cloudflare kan se ændringen. Du får en mail fra Cloudflare når det er klar. Du kan godt fortsætte med trin 5 imens, men selve hjemmesiden virker først efter Cloudflare har bekræftet.
+      </div>
+      <div class="tip">
+        <strong>Hvis DanDomain ikke har en "Sæt navneservere"-knap:</strong> Det kan tage 24-72 timer før den dukker op for nye domæner. Ring til DanDomain support hvis du har travlt.
+      </div>
+    </div>
+
+    <!-- TRIN 5 -->
+    <div class="step">
+      <span class="step-number">5</span>
+      <h2>Tilføj DNS-records der peger på GitHub</h2>
+      <p>Nu fortæller du Cloudflare hvor hjemmesiden bor. Hjemmesiden ligger gratis hos GitHub.</p>
+      <ol>
+        <li>I Cloudflare, vælg dit domæne fra listen.</li>
+        <li>I venstre menu, klik på <span class="button-name">DNS</span>.</li>
+        <li>Slet alle eksisterende A- og CNAME-records (det er normalt sikkert at slette dem hvis du lige har købt domænet).</li>
+        <li>Tryk <span class="button-name">+ Add record</span> og opret <strong>fire A-records</strong> en ad gangen. For hver:
+          <ul style="margin-top: 0.5rem;">
+            <li>Type: <span class="field-name">A</span></li>
+            <li>Name: <span class="field-name">@</span> (det betyder "selve domænet")</li>
+            <li>IPv4 address: én af de fire nedenfor</li>
+            <li>Proxy status: <strong>Proxied</strong> (oranget sky-ikon)</li>
+            <li>Tryk <span class="button-name">Save</span></li>
+          </ul>
+          <p style="margin-top: 0.6rem;">De fire IP-adresser fra GitHub:</p>
+          <ul>
+            <li><code>185.199.108.153</code></li>
+            <li><code>185.199.109.153</code></li>
+            <li><code>185.199.110.153</code></li>
+            <li><code>185.199.111.153</code></li>
+          </ul>
+        </li>
+        <li>Tilføj én CNAME-record til <code>www</code>:
+          <ul style="margin-top: 0.5rem;">
+            <li>Type: <span class="field-name">CNAME</span></li>
+            <li>Name: <span class="field-name">www</span></li>
+            <li>Target: <span class="field-name">sergentisaf.github.io</span></li>
+            <li>Proxy status: <strong>Proxied</strong></li>
+            <li>Tryk <span class="button-name">Save</span></li>
+          </ul>
+        </li>
+      </ol>
+      <div class="check">
+        <strong>Du er færdig med trin 5 når:</strong> du har 5 records i listen (4 A-records og 1 CNAME-record).
+      </div>
+    </div>
+
+    <!-- TRIN 6 -->
+    <div class="step">
+      <span class="step-number">6</span>
+      <h2>Fortæl GitHub om dit domæne</h2>
+      <p>Det sidste trin er at sige til GitHub: "Folk kommer til denne hjemmeside via dogmacables.dk, så svar på det navn".</p>
+      <ol>
+        <li>Åbn <a href="https://github.com/SergentISAF/Dogma-Hjemmeside/settings/pages" target="_blank" rel="noopener">github.com/SergentISAF/Dogma-Hjemmeside/settings/pages</a>.</li>
+        <li>Log ind hvis det beder om det (Dan har koden).</li>
+        <li>Find feltet <span class="button-name">Custom domain</span>.</li>
+        <li>Skriv dit domæne, fx <code>dogmacables.dk</code> (uden <code>https://</code> foran).</li>
+        <li>Tryk <span class="button-name">Save</span>.</li>
+        <li>GitHub tjekker dit domæne i 1-5 minutter. Når der står et grønt flueben ved siden af domænet, er det godkendt.</li>
+        <li>Sæt flueben ved <span class="button-name">Enforce HTTPS</span> (det betyder at hjemmesiden er sikker, med en hængelås i adressefeltet).</li>
+      </ol>
+      <div class="check">
+        <strong>Du er færdig med trin 6 når:</strong> du kan åbne en browser, skrive <code>dogmacables.dk</code>, og se hjemmesiden. Hvis der står "Not secure" eller "kunne ikke loade", så vent 10 minutter og prøv igen. Cloudflare og GitHub skal lige tale sammen.
+      </div>
+    </div>
+
+    <!-- TRIN 7 -->
+    <div class="step">
+      <span class="step-number">7</span>
+      <h2>Sæt kontaktformularen op (Formspree)</h2>
+      <p>Lige nu åbner kontaktformularen din mail-klient. Det virker, men er klodset for kunden. Med Formspree kommer beskederne direkte i din indbakke uden at kunden skal gøre noget.</p>
+      <ol>
+        <li>Åbn <a href="https://formspree.io" target="_blank" rel="noopener">formspree.io</a> og tryk <span class="button-name">Sign up free</span>.</li>
+        <li>Brug <code>hansmlauridsen@gmail.com</code> og opret et password.</li>
+        <li>Bekræft din email (tjek din indbakke, klik på linket).</li>
+        <li>Inde på Formspree, tryk <span class="button-name">+ New Form</span>.</li>
+        <li>Giv den et navn, fx "Dogma Cables kontakt", og indsæt <code>hansmlauridsen@gmail.com</code> som modtager.</li>
+        <li>Tryk <span class="button-name">Create Form</span>.</li>
+        <li>Du får et <strong>Form ID</strong> der ser sådan ud: <code>xeoznkqr</code> (8 tilfældige tegn).</li>
+        <li>Send det ID til Dan, så indsætter han det i hjemmesiden.</li>
+      </ol>
+      <div class="tip">
+        <strong>Gratis-grænsen er 50 mails om måneden.</strong> Det er rigeligt til at starte. Hvis du får flere end det, kan vi opgradere senere.
+      </div>
+    </div>
+
+    <h2 style="margin-top: 4rem;">Hvad nu hvis det ikke virker?</h2>
+    <ul>
+      <li><strong>Hjemmesiden viser "Not Found":</strong> Vent 30 minutter. GitHub og Cloudflare skal tale sammen. Hvis det stadig ikke virker, så tjek at de fire IP-adresser i Cloudflare står korrekt.</li>
+      <li><strong>"Not secure" advarsel:</strong> SSL-certifikatet er ikke klar endnu. Vent 1-2 timer.</li>
+      <li><strong>Cloudflare siger "nameservers ikke aktive":</strong> Vent. Det kan tage op til 24 timer fra du skifter navneservere.</li>
+      <li><strong>Kan ikke logge ind:</strong> Brug "glemt password"-funktionen.</li>
+      <li><strong>Noget helt andet er galt:</strong> Skriv eller ring til Dan. Skriv hvad du gjorde sidst og hvad du så.</li>
+    </ul>
+
+    <div class="glossary">
+      <h3>Hvad betyder ordene?</h3>
+      <dl>
+        <dt>Domæne</dt>
+        <dd>Adressen til din hjemmeside, fx <code>dogmacables.dk</code>. Det er det folk skriver i browseren.</dd>
+
+        <dt>DNS</dt>
+        <dd>Forkortelse for "Domain Name System". Det er internettets telefonbog. Den siger: "Når nogen skriver dogmacables.dk, så send dem til denne computer".</dd>
+
+        <dt>Navneserver</dt>
+        <dd>Den computer der bestemmer hvor folk bliver sendt hen når de skriver dit domæne. Vi flytter ansvaret fra DanDomain til Cloudflare.</dd>
+
+        <dt>A-record</dt>
+        <dd>En linje i DNS-tabellen der peger dit domæne på en specifik IP-adresse (fx GitHub's).</dd>
+
+        <dt>CNAME-record</dt>
+        <dd>En linje der peger ét domæne på et andet, i stedet for på en IP-adresse. Vi bruger det til at få <code>www.dogmacables.dk</code> til også at virke.</dd>
+
+        <dt>SSL/HTTPS</dt>
+        <dd>Den hængelås der står i browserens adressefelt. Det betyder at forbindelsen er sikker. GitHub og Cloudflare laver det gratis for dig.</dd>
+
+        <dt>Formspree</dt>
+        <dd>En tjeneste der modtager kontaktformularer og sender dem som mails til din indbakke.</dd>
+      </dl>
+    </div>
+
+    <div class="help">
+      <p>Hvis du sidder fast, er der ingen skam i at ringe til Dan.</p>
+      <p>Du betaler ikke noget for at klikke forkert. Du kan ikke ødelægge noget der ikke kan laves om.</p>
+      <p style="margin-top: 2rem; font-size: 0.85rem;">
+        <a href="index.html">← Tilbage til hjemmesiden</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
