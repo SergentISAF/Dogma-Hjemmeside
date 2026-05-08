@@ -43,5 +43,5 @@ body.theme-dark {
   --shadow: rgba(0, 0, 0, 0.5);
   --wood-overlay: 0.25;
   --logo-filter: invert(1) sepia(0.2) saturate(0.4) brightness(1.05);
-  --hero-veil: rgba(28, 26, 24, 0.65);
+  --hero-veil: rgba(28, 26, 24, 0.35);
 }

@@ -252,6 +252,17 @@ section.with-divider {
   z-index: 1;
 }
 
+/* Keep logo and tagline legible against the photo on darker themes */
+body.theme-mid .hero-image .hero-logo,
+body.theme-dark .hero-image .hero-logo {
+  filter: var(--logo-filter) drop-shadow(0 2px 14px rgba(0, 0, 0, 0.6));
+}
+
+body.theme-mid .hero-image .hero-tagline,
+body.theme-dark .hero-image .hero-tagline {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
 .hero-inner {
   max-width: 720px;
 }
