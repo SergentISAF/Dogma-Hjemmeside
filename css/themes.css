@@ -13,6 +13,7 @@ body.theme-light {
   --shadow: rgba(58, 42, 30, 0.12);
   --wood-overlay: 0.06;
   --logo-filter: none;
+  --hero-veil: rgba(242, 237, 227, 0.15);
 }
 
 body.theme-mid {
@@ -27,6 +28,7 @@ body.theme-mid {
   --shadow: rgba(0, 0, 0, 0.35);
   --wood-overlay: 0.18;
   --logo-filter: invert(1) sepia(0.3) saturate(0.6) brightness(1.1);
+  --hero-veil: rgba(74, 56, 38, 0.55);
 }
 
 body.theme-dark {
@@ -41,4 +43,5 @@ body.theme-dark {
   --shadow: rgba(0, 0, 0, 0.5);
   --wood-overlay: 0.25;
   --logo-filter: invert(1) sepia(0.2) saturate(0.4) brightness(1.05);
+  --hero-veil: rgba(28, 26, 24, 0.65);
 }

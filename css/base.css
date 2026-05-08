@@ -220,6 +220,38 @@ section.with-divider {
   padding: 3rem 1.5rem;
 }
 
+/* Hero with photographic background — only on index.html via .hero-image */
+.hero-image {
+  position: relative;
+  background-image: url('../img/dogma-hero-bg.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.hero-image::before,
+.hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Tema-tinted veil — picks up the body theme color */
+.hero-image::before {
+  background: var(--hero-veil, rgba(242, 237, 227, 0.2));
+}
+
+/* Bottom fade — blends image into the page background */
+.hero-image::after {
+  background: linear-gradient(180deg, transparent 55%, var(--bg) 100%);
+}
+
+.hero-image .hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-inner {
   max-width: 720px;
 }
