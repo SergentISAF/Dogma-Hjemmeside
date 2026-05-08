@@ -8,7 +8,7 @@ Multi-page website for Hans Lauridsen, Dogma Cables. Handmade audio cables, 20+ 
 - `about.html` — About Hans + the Ferrari quote
 - `cables.html` — What Hans builds (speaker, signal, power, custom)
 - `contact.html` — Contact form + direct phone/email
-- `guide.html` — Setup guide for Hans (Cloudflare + GitHub Pages + Formspree). Written in Danish for Hans.
+- `guide.html` — Setup guide for Hans (Cloudflare + GitHub Pages + Formspree)
 
 ## Themes
 
