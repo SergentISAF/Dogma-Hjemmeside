@@ -1,0 +1,14 @@
+/* Mellem — Oiled oak, mellembrun baggrund, bone tekst, messing accent */
+
+:root {
+  --bg: #5a4632;
+  --bg-alt: #4a3826;
+  --text: #e8d9bf;
+  --text-muted: #c4b08e;
+  --accent: #c9a24a;
+  --accent-strong: #e0b85e;
+  --border: rgba(232, 217, 191, 0.2);
+  --shadow: rgba(0, 0, 0, 0.35);
+  --wood-overlay: 0.18;
+  --logo-filter: invert(1) sepia(0.3) saturate(0.6) brightness(1.1);
+}

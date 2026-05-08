@@ -1,0 +1,14 @@
+/* Mørk — Charcoal aften-lytterum, bone tekst, brændt kobber accent */
+
+:root {
+  --bg: #1c1a18;
+  --bg-alt: #26221e;
+  --text: #e8d9bf;
+  --text-muted: #a89678;
+  --accent: #b87333;
+  --accent-strong: #d68a3e;
+  --border: rgba(232, 217, 191, 0.15);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --wood-overlay: 0.25;
+  --logo-filter: invert(1) sepia(0.2) saturate(0.4) brightness(1.05);
+}
