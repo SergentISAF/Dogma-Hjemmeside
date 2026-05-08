@@ -1,32 +1,43 @@
-// Theme loaded synchronously to avoid flash. Run as early as possible in <head>.
+// Dogma Cables theme switcher.
+// Loaded with `defer` so DOM is ready by the time it runs.
+
 (function () {
-  const saved = localStorage.getItem('dogma-theme') || 'light';
-  document.documentElement.dataset.theme = saved;
-  document.addEventListener('DOMContentLoaded', () => {
-    document.body.className = `theme-${saved}`;
-    bindSwitcher();
-    markActiveSwitcher(saved);
-  });
-})();
+  function readSaved() {
+    try {
+      return localStorage.getItem('dogma-theme') || 'light';
+    } catch (e) {
+      return 'light';
+    }
+  }
 
-function setTheme(name) {
-  document.body.className = `theme-${name}`;
-  document.documentElement.dataset.theme = name;
-  localStorage.setItem('dogma-theme', name);
-  markActiveSwitcher(name);
-}
-
-function bindSwitcher() {
-  document.querySelectorAll('[data-theme]').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      setTheme(btn.dataset.theme);
+  function applyTheme(name) {
+    document.body.className = 'theme-' + name;
+    document.documentElement.dataset.theme = name;
+    try {
+      localStorage.setItem('dogma-theme', name);
+    } catch (e) {
+      // localStorage may be blocked; theme still applies in-page
+    }
+    document.querySelectorAll('[data-theme]').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.theme === name);
     });
-  });
-}
+  }
 
-function markActiveSwitcher(name) {
-  document.querySelectorAll('[data-theme]').forEach((btn) => {
-    btn.classList.toggle('active', btn.dataset.theme === name);
-  });
-}
+  function init() {
+    var saved = readSaved();
+    applyTheme(saved);
+
+    document.querySelectorAll('[data-theme]').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        applyTheme(btn.dataset.theme);
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
