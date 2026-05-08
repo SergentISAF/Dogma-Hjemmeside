@@ -244,7 +244,7 @@ section.with-divider {
 
 /* Bottom fade — blends image into the page background */
 .hero-image::after {
-  background: linear-gradient(180deg, transparent 55%, var(--bg) 100%);
+  background: linear-gradient(180deg, transparent 15%, transparent 50%, var(--bg) 110%);
 }
 
 .hero-image .hero-inner {
