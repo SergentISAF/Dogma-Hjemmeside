@@ -38,7 +38,7 @@
     document.querySelectorAll('[data-en], [data-da]').forEach(function (el) {
       applyToElement(el, lang);
     });
-    document.querySelectorAll('[data-lang]').forEach(function (btn) {
+    document.querySelectorAll('.lang-switcher [data-lang]').forEach(function (btn) {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
     try {
@@ -50,7 +50,7 @@
 
   function init() {
     applyLang(readSaved());
-    document.querySelectorAll('[data-lang]').forEach(function (btn) {
+    document.querySelectorAll('.lang-switcher [data-lang]').forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         applyLang(btn.dataset.lang);
