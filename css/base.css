@@ -226,7 +226,7 @@ section.with-divider {
   align-items: flex-start;
   justify-content: center;
   text-align: center;
-  padding: 1.5rem 1.5rem 4rem;
+  padding: 1.5rem 1.5rem 1rem;
 }
 
 @media (min-width: 900px) {
@@ -291,7 +291,13 @@ body.page-home .home-contact {
 }
 
 body.page-home footer {
-  background: transparent;
+  background: var(--bg);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-intro .contact-intro:last-child {
+  margin-bottom: 0.5rem;
 }
 
 .hero-image .hero-inner {
