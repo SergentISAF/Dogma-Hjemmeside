@@ -257,7 +257,7 @@ section.with-divider {
 
 /* Bottom fade — blends image into the page background */
 .hero-image::after {
-  background: linear-gradient(180deg, transparent 15%, transparent 50%, var(--bg) 110%);
+  background: linear-gradient(180deg, transparent 0%, transparent 30%, var(--bg) 95%, var(--bg) 100%);
 }
 
 .hero-image .hero-inner {
@@ -422,7 +422,8 @@ body.theme-dark .hero-image .hero-tagline {
 
 /* ===== Home-page contact section ===== */
 .home-contact {
-  border-top: 1px solid var(--border);
+  background: var(--bg);
+  padding-top: 2rem;
 }
 
 .home-contact-heading {
@@ -563,6 +564,11 @@ footer a:hover {
   background: var(--border);
   border: none;
   margin: 0 auto 1rem;
+}
+
+.footer-copyright {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
 }
 
 /* ===== Responsive ===== */
