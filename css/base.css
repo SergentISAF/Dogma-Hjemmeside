@@ -225,12 +225,17 @@ section.with-divider {
 
 /* ===== Hero (homepage) ===== */
 .hero {
-  min-height: 90vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   text-align: center;
-  padding: 1.5rem 1.5rem 3rem;
+  padding: 1.5rem 1.5rem 4rem;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    min-height: 70vh;
+  }
 }
 
 .hero-intro {
@@ -251,22 +256,12 @@ section.with-divider {
   background-repeat: no-repeat;
 }
 
-.hero-image::before,
-.hero-image::after {
+.hero-image::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
-}
-
-/* Tema-tinted veil — picks up the body theme color */
-.hero-image::before {
   background: var(--hero-veil, rgba(242, 237, 227, 0.2));
-}
-
-/* Bottom fade — blends image into the page background */
-.hero-image::after {
-  background: linear-gradient(180deg, transparent 0%, transparent 30%, var(--bg) 95%, var(--bg) 100%);
 }
 
 .hero-image .hero-inner {
