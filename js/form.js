@@ -1,7 +1,7 @@
 // Dogma Cables contact form.
-// Sends via FormSubmit (no account needed). Hans confirms once by clicking
-// the link in the first email FormSubmit sends him; after that all
-// submissions arrive directly in his Gmail.
+// Sends via FormSubmit (no account needed). The owning inbox confirms
+// once via the verification email FormSubmit delivers on the first
+// submit; after that every submission lands in that inbox directly.
 // Falls back to mailto if the network request fails.
 
 const HANS_EMAIL = 'hansmlauridsen@gmail.com';
@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (response.ok && data.success !== 'false') {
         status.className = 'form-status success';
         status.textContent = t(
-          'Thanks. Your message has been sent. Hans will get back to you soon.',
-          'Tak. Din besked er sendt. Hans vender tilbage til dig snarest.'
+          "Thanks. Your message has been sent. We'll get back to you soon.",
+          'Tak. Din besked er sendt. Vi vender tilbage til dig snarest.'
         );
         form.reset();
       } else {
@@ -68,8 +68,8 @@ function openMailto(name, email, message, t) {
   if (status) {
     status.className = 'form-status success';
     status.textContent = t(
-      'Your mail client is opening. Press Send to deliver the message to Hans.',
-      'Din mail-klient åbner. Tryk Send for at levere beskeden til Hans.'
+      'Your mail client is opening. Press Send to deliver the message.',
+      'Din mail-klient åbner. Tryk Send for at levere beskeden.'
     );
   }
 }
