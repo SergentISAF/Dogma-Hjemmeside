@@ -244,21 +244,54 @@ section.with-divider {
   color: var(--text);
 }
 
-/* Hero with photographic background — only on index.html via .hero-image */
+/* Hero with photographic background — only on index.html via .hero-image.
+   On the home page the photo is on the body instead so it carries through
+   the contact section as well; this rule remains as a safe fallback. */
 .hero-image {
   position: relative;
+}
+
+body:not(.page-home) .hero-image {
   background-image: url('../img/dogma-hero-bg.jpg');
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
 }
 
-.hero-image::before {
+body:not(.page-home) .hero-image::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
   background: var(--hero-veil, rgba(242, 237, 227, 0.2));
+}
+
+/* Home-page full-bleed background: photo covers the whole page so the
+   contact form sits on the same landscape as the hero. */
+body.page-home {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(28, 26, 24, 0.4), rgba(28, 26, 24, 0.55)),
+    url('../img/dogma-hero-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 720px) {
+  body.page-home {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+}
+
+body.page-home .home-contact {
+  background: transparent;
+}
+
+body.page-home footer {
+  background: transparent;
 }
 
 .hero-image .hero-inner {
