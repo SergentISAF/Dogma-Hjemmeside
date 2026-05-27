@@ -225,12 +225,11 @@ section.with-divider {
 
 /* ===== Hero (homepage) ===== */
 .hero {
-  min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 3rem 1.5rem;
+  padding: 2.5rem 1.5rem 1rem;
 }
 
 /* Hero with photographic background — only on index.html via .hero-image */
@@ -423,7 +422,7 @@ body.theme-dark .hero-image .hero-tagline {
 /* ===== Home-page contact section ===== */
 .home-contact {
   background: var(--bg);
-  padding-top: 2rem;
+  padding-top: 0;
 }
 
 .home-contact-heading {
