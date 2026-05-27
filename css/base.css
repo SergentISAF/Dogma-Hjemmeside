@@ -226,13 +226,7 @@ section.with-divider {
   align-items: flex-start;
   justify-content: center;
   text-align: center;
-  padding: 1.5rem 1.5rem 1rem;
-}
-
-@media (min-width: 900px) {
-  .hero {
-    min-height: 70vh;
-  }
+  padding: 1.5rem 1.5rem 0.5rem;
 }
 
 .hero-intro {
@@ -274,7 +268,7 @@ body.page-home {
     linear-gradient(rgba(28, 26, 24, 0.4), rgba(28, 26, 24, 0.55)),
     url('../img/dogma-hero-bg.jpg');
   background-size: cover;
-  background-position: center top;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -288,6 +282,26 @@ body.page-home {
 
 body.page-home .home-contact {
   background: transparent;
+}
+
+body.page-home .contact-form input,
+body.page-home .contact-form textarea {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(232, 217, 191, 0.35);
+  color: var(--text);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+body.page-home .contact-form input:focus,
+body.page-home .contact-form textarea:focus {
+  background: rgba(0, 0, 0, 0.45);
+  border-color: var(--accent);
+}
+
+body.page-home .contact-form label {
+  color: var(--text);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
 }
 
 body.page-home footer {
@@ -465,7 +479,8 @@ body.theme-dark .hero-image .hero-intro .contact-intro {
 /* ===== Home-page contact section ===== */
 .home-contact {
   background: var(--bg);
-  padding-top: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .home-contact-heading {
