@@ -5,7 +5,7 @@
 
 (function () {
   var STORAGE_KEY = 'dogma-lang';
-  var DEFAULT_LANG = 'en';
+  var DEFAULT_LANG = 'da';
 
   function readSaved() {
     try {
