@@ -21,9 +21,9 @@ Heritage / artisan, not corporate / clinical. Reference brand: **Cardas Audio**.
 - Typography: Playfair Display for headings, Lora for body. Both from Google Fonts.
 - Colour: warm wood tones (cream, walnut, copper, brass, charcoal). Never pure `#fff` or `#000`.
 - Background: subtle wood-grain via repeating linear-gradients in `base.css`.
-- Logo: black serif/script (`img/dogma-logo.png`). Transparent PNG. On dark themes a CSS `--logo-filter: invert(...)` makes it readable.
+- Logo: black serif/script (`img/dogma-logo.png`). Transparent PNG. The dark-theme `--logo-filter: invert(...)` makes it readable on the dark background.
 
-Three themes selectable from the header (`light`, `mid`, `dark`). User choice is persisted in `localStorage` under key `dogma-theme`.
+The site uses a single dark theme. The CSS still lives behind `body.theme-dark` (in `css/themes.css`) so a light variant can be added back without restructuring. The theme switcher UI and `js/theme.js` were removed when we settled on dark-only.
 
 ## Structure
 
@@ -43,8 +43,7 @@ Each page reuses the same sticky header (logo, nav, theme switcher) and footer.
 ```
 index.html, about.html, cables.html, contact.html, guide.html
 css/base.css       layout, typography, components, theme-agnostic vars
-css/themes.css     body.theme-{light,mid,dark} overrides
-js/theme.js        loads saved theme from localStorage, binds switcher
+css/themes.css     body.theme-dark colour vars (only theme right now)
 js/lang.js         loads saved language from localStorage, swaps data-en/data-da text
 js/form.js         contact form submit, FormSubmit with mailto fallback
 img/               logo (transparent PNG, full + compact)
