@@ -4,8 +4,8 @@
 // submit; after that every submission lands in that inbox directly.
 // Falls back to mailto if the network request fails.
 
-const HANS_EMAIL = 'hansmlauridsen@gmail.com';
-const FORMSUBMIT_URL = `https://formsubmit.co/ajax/${HANS_EMAIL}`;
+const CONTACT_EMAIL = 'contact@dogmacables.com';
+const FORMSUBMIT_URL = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.contact-form');
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function openMailto(name, email, message, t) {
   const subject = `Inquiry from ${name || 'a customer'} via Dogma Cables`;
   const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-  const url = `mailto:${HANS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const url = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   window.location.href = url;
 
   const status = document.querySelector('.form-status');
