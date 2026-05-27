@@ -4,9 +4,9 @@ This file is loaded into Claude Code sessions working on this repo. Keep it shor
 
 ## Language
 
-**All content is in English.** Page copy, headings, button labels, alt text, meta tags, comments, commit messages, README, and the Hans setup guide. No Danish anywhere.
+**Site is bilingual: English (default) and Danish.** A `EN / DA` switcher in the header toggles between them; the choice is stored in `localStorage` under `dogma-lang`. Translatable elements carry `data-en` and `data-da` attributes; `js/lang.js` swaps `textContent` (or the right attribute for META / INPUT / TEXTAREA / IMG). Keep both languages in lockstep when changing copy.
 
-The Ferrari quote on `about.html` is Hans's own line, translated to English: "You don't buy a Ferrari and put cheap wheels on it." If we ever want to honour the original Danish on a separate "in his own words" section, that's a deliberate exception, not the default.
+Commit messages, code comments, the README, and the Hans setup guide stay in English. The Ferrari quote in `about.html` is Hans's original Danish line, also shown translated.
 
 ## Audience and tone
 
@@ -45,13 +45,14 @@ index.html, about.html, cables.html, contact.html, guide.html
 css/base.css       layout, typography, components, theme-agnostic vars
 css/themes.css     body.theme-{light,mid,dark} overrides
 js/theme.js        loads saved theme from localStorage, binds switcher
-js/form.js         contact form submit, Formspree with mailto fallback
+js/lang.js         loads saved language from localStorage, swaps data-en/data-da text
+js/form.js         contact form submit, FormSubmit with mailto fallback
 img/               logo (transparent PNG, full + compact)
 ```
 
 ## Form
 
-Contact form posts to Formspree. The Form ID lives in `js/form.js` as `FORMSPREE_ID`. Until Hans creates a Formspree account and supplies the ID, the form falls back to a `mailto:` link to `hansmlauridsen@gmail.com`. Don't break this fallback.
+Contact form posts to FormSubmit (`https://formsubmit.co/ajax/hansmlauridsen@gmail.com`). No account needed; Hans confirms once via the verification email FormSubmit sends him on the first submission. If the network request fails, the form falls back to a `mailto:` link. Don't break this fallback.
 
 ## Hosting
 
@@ -74,5 +75,4 @@ Don't fabricate these — leave placeholders or omit until Hans provides them:
 
 - Don't add stock-photo audio rooms, 3D-rendered cable mockups, gradient backgrounds, glassmorphism, or carousel sliders.
 - Don't add 5-star widget reviews. Use named text quotes if reviews come.
-- Don't translate content back to Danish without an explicit ask.
 - Don't add a webshop. The brand sells through conversation, not cart.

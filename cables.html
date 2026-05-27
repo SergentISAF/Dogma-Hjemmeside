@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
-  <meta name="description" content="Speaker, signal, and power cables built to order by Hans Lauridsen at Dogma Cables.">
-  <title>Cables — Dogma Cables</title>
+  <meta name="description"
+        data-en="Speaker, signal, and power cables built to order by Hans Lauridsen at Dogma Cables."
+        data-da="Højttaler-, signal- og strømkabler bygget på bestilling af Hans Lauridsen hos Dogma Cables."
+        content="Speaker, signal, and power cables built to order by Hans Lauridsen at Dogma Cables.">
+  <title data-en="Cables — Dogma Cables"
+         data-da="Kabler — Dogma Cables">Cables — Dogma Cables</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/themes.css">
   <script src="js/theme.js" defer></script>
+  <script src="js/lang.js" defer></script>
 </head>
 <body class="theme-light">
 
@@ -22,52 +27,62 @@
         <img src="img/dogma-logo-compact.png" alt="Dogma Cables">
       </a>
       <nav class="main-nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="cables.html" class="active">Cables</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" data-en="Home" data-da="Hjem">Home</a>
+        <a href="about.html" data-en="About" data-da="Om">About</a>
+        <a href="cables.html" class="active" data-en="Cables" data-da="Kabler">Cables</a>
+        <a href="contact.html" data-en="Contact" data-da="Kontakt">Contact</a>
       </nav>
+      <div class="lang-switcher" aria-label="Language">
+        <button data-lang="en" type="button">EN</button>
+        <button data-lang="da" type="button">DA</button>
+      </div>
       <div class="theme-switcher" aria-label="Theme">
-        <button data-theme="light" type="button">Light</button>
-        <button data-theme="mid" type="button">Mid</button>
-        <button data-theme="dark" type="button">Dark</button>
+        <button data-theme="light" type="button" data-en="Light" data-da="Lys">Light</button>
+        <button data-theme="mid" type="button" data-en="Mid" data-da="Mellem">Mid</button>
+        <button data-theme="dark" type="button" data-en="Dark" data-da="Mørk">Dark</button>
       </div>
     </div>
   </header>
 
   <main>
     <section class="page-header">
-      <h1>What Hans Builds</h1>
-      <p class="subtitle">Each cable made to order.</p>
+      <h1 data-en="What Hans Builds" data-da="Hvad Hans bygger">What Hans Builds</h1>
+      <p class="subtitle"
+         data-en="Each cable made to order."
+         data-da="Hvert kabel bygges på bestilling.">Each cable made to order.</p>
     </section>
 
     <section class="products">
       <div class="container">
-        <p style="text-align: center; max-width: 640px; margin: 0 auto 2.5rem; color: var(--text-muted);">
-          Dogma Cables only takes orders built to spec. No stock production, no webshop. Get in touch with Hans and tell him what you need.
-        </p>
+        <p class="products-intro"
+           data-en="Dogma Cables only takes orders built to spec. No stock production, no webshop. Get in touch with Hans and tell him what you need."
+           data-da="Dogma Cables tager kun ordrer bygget til specifikation. Ingen lagervarer, ingen webshop. Tag fat i Hans og fortæl hvad du har brug for.">Dogma Cables only takes orders built to spec. No stock production, no webshop. Get in touch with Hans and tell him what you need.</p>
 
         <ul class="products-list">
           <li class="product-item">
-            <h3>Speaker Cables</h3>
-            <p>Custom lengths. Choice of conductors and dielectrics matched to your system and listening room.</p>
+            <h3 data-en="Speaker Cables" data-da="Højttalerkabler">Speaker Cables</h3>
+            <p data-en="Custom lengths. Choice of conductors and dielectrics matched to your system and listening room."
+               data-da="Specialmål. Valg af ledere og dielektrika tilpasset dit anlæg og lytterum.">Custom lengths. Choice of conductors and dielectrics matched to your system and listening room.</p>
           </li>
           <li class="product-item">
-            <h3>Signal Cables</h3>
-            <p>RCA and XLR. Built to the right impedance and shielding, terminated to your wishes.</p>
+            <h3 data-en="Signal Cables" data-da="Signalkabler">Signal Cables</h3>
+            <p data-en="RCA and XLR. Built to the right impedance and shielding, terminated to your wishes."
+               data-da="RCA og XLR. Bygget med rigtig impedans og afskærmning, termineret efter dine ønsker.">RCA and XLR. Built to the right impedance and shielding, terminated to your wishes.</p>
           </li>
           <li class="product-item">
-            <h3>Power Cables</h3>
-            <p>High-grade mains leads for preamps, DACs, and power amps. Often the most overlooked link in the chain.</p>
+            <h3 data-en="Power Cables" data-da="Strømkabler">Power Cables</h3>
+            <p data-en="High-grade mains leads for preamps, DACs, and power amps. Often the most overlooked link in the chain."
+               data-da="Strømkabler af høj klasse til forforstærkere, DAC'er og effektforstærkere. Ofte det mest oversete led i kæden.">High-grade mains leads for preamps, DACs, and power amps. Often the most overlooked link in the chain.</p>
           </li>
           <li class="product-item">
-            <h3>Special Builds</h3>
-            <p>An old termination, a particular geometry, or something off-the-shelf cannot deliver. Let's talk it through.</p>
+            <h3 data-en="Special Builds" data-da="Specialbygninger">Special Builds</h3>
+            <p data-en="An old termination, a particular geometry, or something off-the-shelf cannot deliver. Let's talk it through."
+               data-da="En gammel terminering, en særlig geometri, eller noget standardvarer ikke kan levere. Lad os tage en snak.">An old termination, a particular geometry, or something off-the-shelf cannot deliver. Let's talk it through.</p>
           </li>
         </ul>
 
-        <p style="text-align: center; margin-top: 3rem;">
-          <a href="contact.html" style="font-family: 'Playfair Display', serif; font-size: 1.1rem;">Contact Hans →</a>
+        <p class="products-cta">
+          <a href="contact.html" data-en="Contact Hans →" data-da="Kontakt Hans →">Contact Hans →</a>
         </p>
       </div>
     </section>
@@ -76,7 +91,11 @@
   <footer>
     <hr class="footer-rule">
     <p><strong>Dogma Cables</strong> &nbsp;·&nbsp; Hans Lauridsen</p>
-    <p>Hand made in Denmark &nbsp;·&nbsp; <a href="contact.html">Get in touch</a></p>
+    <p>
+      <span data-en="Hand made in Denmark" data-da="Håndlavet i Danmark">Hand made in Denmark</span>
+      &nbsp;·&nbsp;
+      <a href="contact.html" data-en="Get in touch" data-da="Kontakt">Get in touch</a>
+    </p>
     <p style="margin-top: 1.5rem; font-size: 0.8rem;">&copy; 2026 Dogma Cables</p>
   </footer>
 

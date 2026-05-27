@@ -1,57 +1,75 @@
 // Dogma Cables contact form.
-// Sends via Formspree if configured, falls back to mailto otherwise.
+// Sends via FormSubmit (no account needed). Hans confirms once by clicking
+// the link in the first email FormSubmit sends him; after that all
+// submissions arrive directly in his Gmail.
+// Falls back to mailto if the network request fails.
 
-const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // replace with real ID from formspree.io
-const FALLBACK_EMAIL = 'hansmlauridsen@gmail.com';
+const HANS_EMAIL = 'hansmlauridsen@gmail.com';
+const FORMSUBMIT_URL = `https://formsubmit.co/ajax/${HANS_EMAIL}`;
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
   const status = form.querySelector('.form-status');
+  const submitBtn = form.querySelector('button[type="submit"]');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     status.className = 'form-status';
     status.textContent = '';
 
+    const lang = document.documentElement.dataset.lang || 'en';
+    const t = (en, da) => (lang === 'da' ? da : en);
+
     const formData = new FormData(form);
     const name = formData.get('name');
     const email = formData.get('email');
     const message = formData.get('message');
 
-    if (FORMSPREE_ID && FORMSPREE_ID !== 'YOUR_FORMSPREE_ID') {
-      try {
-        const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: formData,
-        });
-        if (response.ok) {
-          status.className = 'form-status success';
-          status.textContent = 'Thanks. Your message has been sent. Hans will get back to you soon.';
-          form.reset();
-        } else {
-          throw new Error('formspree error');
-        }
-      } catch (err) {
-        openMailto(name, email, message);
+    formData.append('_subject', `Inquiry from ${name || 'a customer'} — Dogma Cables`);
+    formData.append('_template', 'table');
+    formData.append('_captcha', 'false');
+
+    if (submitBtn) submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(FORMSUBMIT_URL, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData,
+      });
+      const data = await response.json().catch(() => ({}));
+      if (response.ok && data.success !== 'false') {
+        status.className = 'form-status success';
+        status.textContent = t(
+          'Thanks. Your message has been sent. Hans will get back to you soon.',
+          'Tak. Din besked er sendt. Hans vender tilbage til dig snarest.'
+        );
+        form.reset();
+      } else {
+        throw new Error('formsubmit error');
       }
-    } else {
-      openMailto(name, email, message);
+    } catch (err) {
+      openMailto(name, email, message, t);
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
     }
   });
 });
 
-function openMailto(name, email, message) {
-  const subject = `Inquiry from ${name || 'a customer'} via dogmacables`;
+function openMailto(name, email, message, t) {
+  const subject = `Inquiry from ${name || 'a customer'} via Dogma Cables`;
   const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-  const url = `mailto:${FALLBACK_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const url = `mailto:${HANS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   window.location.href = url;
 
   const status = document.querySelector('.form-status');
   if (status) {
     status.className = 'form-status success';
-    status.textContent = 'Your mail client is opening. Press Send to deliver the message to Hans.';
+    status.textContent = t(
+      'Your mail client is opening. Press Send to deliver the message to Hans.',
+      'Din mail-klient åbner. Tryk Send for at levere beskeden til Hans.'
+    );
   }
 }

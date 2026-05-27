@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
-  <meta name="description" content="Dogma Cables. Handmade audio cables by Hans Lauridsen. Coming this summer.">
-  <title>Dogma Cables — Coming this summer</title>
+  <meta name="description"
+        data-en="Dogma Cables. Handmade audio cables by Hans Lauridsen. Coming this summer."
+        data-da="Dogma Cables. Håndlavede lydkabler af Hans Lauridsen. Kommer denne sommer."
+        content="Dogma Cables. Handmade audio cables by Hans Lauridsen. Coming this summer.">
+  <title data-en="Dogma Cables — Coming this summer"
+         data-da="Dogma Cables — Kommer denne sommer">Dogma Cables — Coming this summer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/themes.css">
   <script src="js/theme.js" defer></script>
+  <script src="js/lang.js" defer></script>
 </head>
 <body class="theme-light">
 
@@ -22,15 +27,19 @@
         <img src="img/dogma-logo-compact.png" alt="Dogma Cables">
       </a>
       <nav class="main-nav" aria-label="Main">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="cables.html">Cables</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" class="active" data-en="Home" data-da="Hjem">Home</a>
+        <a href="about.html" data-en="About" data-da="Om">About</a>
+        <a href="cables.html" data-en="Cables" data-da="Kabler">Cables</a>
+        <a href="contact.html" data-en="Contact" data-da="Kontakt">Contact</a>
       </nav>
+      <div class="lang-switcher" aria-label="Language">
+        <button data-lang="en" type="button">EN</button>
+        <button data-lang="da" type="button">DA</button>
+      </div>
       <div class="theme-switcher" aria-label="Theme">
-        <button data-theme="light" type="button">Light</button>
-        <button data-theme="mid" type="button">Mid</button>
-        <button data-theme="dark" type="button">Dark</button>
+        <button data-theme="light" type="button" data-en="Light" data-da="Lys">Light</button>
+        <button data-theme="mid" type="button" data-en="Mid" data-da="Mellem">Mid</button>
+        <button data-theme="dark" type="button" data-en="Dark" data-da="Mørk">Dark</button>
       </div>
     </div>
   </header>
@@ -39,15 +48,26 @@
     <div class="hero-inner">
       <img src="img/dogma-logo.png" alt="Dogma Cables" class="hero-logo">
       <hr class="hero-rule">
-      <p class="hero-tagline">Coming this summer.<br><span style="font-size: 0.8em;">Just to do things a little differently.</span></p>
-      <p class="hero-subtagline">Handmade audio cables of the finest quality at real-world prices.</p>
+      <p class="hero-tagline">
+        <span data-en="Coming this summer." data-da="Kommer denne sommer.">Coming this summer.</span><br>
+        <span class="hero-tagline-sub"
+              data-en="Just to do things a little differently."
+              data-da="Bare for at gøre tingene lidt anderledes.">Just to do things a little differently.</span>
+      </p>
+      <p class="hero-subtagline"
+         data-en="Handmade audio cables of the finest quality at real-world prices."
+         data-da="Håndlavede lydkabler af fineste kvalitet til reelle priser.">Handmade audio cables of the finest quality at real-world prices.</p>
     </div>
   </main>
 
   <footer>
     <hr class="footer-rule">
     <p><strong>Dogma Cables</strong> &nbsp;·&nbsp; Hans Lauridsen</p>
-    <p>Hand made in Denmark &nbsp;·&nbsp; <a href="contact.html">Get in touch</a></p>
+    <p>
+      <span data-en="Hand made in Denmark" data-da="Håndlavet i Danmark">Hand made in Denmark</span>
+      &nbsp;·&nbsp;
+      <a href="contact.html" data-en="Get in touch" data-da="Kontakt">Get in touch</a>
+    </p>
     <p style="margin-top: 1.5rem; font-size: 0.8rem;">&copy; 2026 Dogma Cables</p>
   </footer>
 
