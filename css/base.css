@@ -420,6 +420,16 @@ body.theme-dark .hero-image .hero-tagline {
   font-size: 0.98rem;
 }
 
+/* ===== Home-page contact section ===== */
+.home-contact {
+  border-top: 1px solid var(--border);
+}
+
+.home-contact-heading {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 /* ===== Contact form ===== */
 .contact-intro {
   text-align: center;

@@ -54,6 +54,41 @@
     </div>
   </main>
 
+  <section class="contact home-contact with-divider">
+    <div class="container">
+      <h2 class="home-contact-heading"
+          data-en="Get in touch with Hans"
+          data-da="Skriv til Hans">Get in touch with Hans</h2>
+      <p class="contact-intro"
+         data-en="Cables are built to order. Tell Hans what you need, what system it's for, and how long you're thinking. He'll get back to you personally."
+         data-da="Kabler bygges på bestilling. Fortæl Hans hvad du har brug for, hvilket anlæg det er til, og hvor langt du tænker. Han vender personligt tilbage.">Cables are built to order. Tell Hans what you need, what system it's for, and how long you're thinking. He'll get back to you personally.</p>
+
+      <form class="contact-form" novalidate>
+        <div>
+          <label for="name" data-en="Name" data-da="Navn">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email" data-en="Email" data-da="E-mail">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="message" data-en="Message" data-da="Besked">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="form-status" role="status" aria-live="polite"></div>
+        <button type="submit" data-en="Send to Hans" data-da="Send til Hans">Send to Hans</button>
+      </form>
+
+      <p class="contact-direct">
+        <span data-en="Or call directly:" data-da="Eller ring direkte:">Or call directly:</span>
+        <strong>+45 26 20 33 05</strong><br>
+        <span data-en="Or write:" data-da="Eller skriv:">Or write:</span>
+        <a href="mailto:hansmlauridsen@gmail.com">hansmlauridsen@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
   <footer>
     <hr class="footer-rule">
     <p><strong>Dogma Cables</strong> &nbsp;·&nbsp; Hans Lauridsen</p>
@@ -65,5 +100,6 @@
     <p style="margin-top: 1.5rem; font-size: 0.8rem;">&copy; 2026 Dogma Cables</p>
   </footer>
 
+  <script src="js/form.js"></script>
 </body>
 </html>
