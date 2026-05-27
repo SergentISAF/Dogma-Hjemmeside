@@ -431,6 +431,14 @@ body.theme-dark .hero-image .hero-tagline {
   margin-bottom: 1rem;
 }
 
+.contact-intro-lead {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+
 /* ===== Contact form ===== */
 .contact-intro {
   text-align: center;
@@ -494,7 +502,7 @@ body.theme-dark .hero-image .hero-tagline {
   border: none;
   border-radius: 2px;
   cursor: pointer;
-  justify-self: start;
+  justify-self: center;
   transition: background-color 0.2s ease;
 }
 
