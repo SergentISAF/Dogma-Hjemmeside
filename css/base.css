@@ -192,20 +192,17 @@ a:hover {
     padding: 0.6rem 0;
   }
   .header-inner {
-    flex-wrap: wrap;
     gap: 0.6rem;
-    justify-content: center;
   }
-  .header-logo {
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 0.3rem;
-  }
-  .header-logo img { height: 1.8rem; }
+  .header-logo img { height: 1.6rem; }
   .main-nav { gap: 1.2rem; font-size: 0.95rem; }
-  .theme-switcher,
-  .lang-switcher { width: auto; justify-content: center; margin-top: 0.3rem; }
-  .lang-switcher { margin-right: 0; padding-right: 0; border-right: none; }
+  .lang-switcher {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+    font-size: 0.8rem;
+  }
+  .lang-switcher button { padding: 0.3rem 0.55rem; }
 }
 
 /* ===== Layout ===== */
