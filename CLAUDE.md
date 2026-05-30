@@ -25,11 +25,13 @@ Footer line on every page: "Handmade with pride in Denmark" / "Håndlavet med st
 
 ## Language
 
-**Bilingual: English (default) and Danish.** `EN / DA` switcher in the
+**Bilingual: Danish (default) and English.** `EN / DA` switcher in the
 header. Choice stored in `localStorage` under `dogma-lang`. Translatable
 elements carry `data-en` and `data-da` attributes; `js/lang.js` swaps
 `textContent` (or the right attribute for META / INPUT / TEXTAREA / IMG).
-Keep both languages in lockstep when changing copy.
+The **Danish copy is also written into the HTML directly** so first
+paint shows DA, not EN — keep that pattern when adding new bilingual
+elements. Keep both languages in lockstep when changing copy.
 
 **Selector gotcha**: `js/lang.js` sets `data-lang` on `<html>` for CSS hooks,
 so the click-handler selector must be `.lang-switcher [data-lang]` — a bare
@@ -60,13 +62,15 @@ under the footer-rule sits on black.
 
 ## Structure
 
-Currently active: **only `index.html`** is linked from the (now empty) nav.
-about / cables / contact pages still exist in the repo as dormant templates
-for future activation; they keep the brand-voice rewrites so they're ready
-to re-link from the nav when there's real content.
+Currently active: **`index.html` and `services.html`**, linked via a single
+nav entry "Værkstedet" / "Workshop" in the header on both pages. about /
+cables / contact pages still exist in the repo as dormant templates for
+future activation; they keep the brand-voice rewrites and DA defaults so
+they're ready to re-link from the nav when there's real content.
 
 Files:
-- `index.html` — coming-soon page with full-bleed hero photo, intro copy, and contact form
+- `index.html` — coming-soon page with full-bleed hero photo, intro copy, contact form
+- `services.html` ("Værkstedet") — page-header + 8-item service list + Nordost case study with 4-image gallery
 - `about.html`, `cables.html`, `contact.html` — dormant, not linked
 - `guide.html` — internal Cloudflare + GitHub Pages + form-setup walkthrough for Hans
 
@@ -96,16 +100,19 @@ fallback.
 
 ## Hosting and domain
 
-Hosted on GitHub Pages from `main`. Deploy is automatic on push:
-`https://sergentisaf.github.io/Dogma-Hjemmeside/`
+Hosted on GitHub Pages from `main`. Deploy is automatic on push.
 
-Custom domain `dogmacables.com` is registered at Simply.com. DNS not
-yet pointed to GitHub Pages — pending the Simply account number so we
-can drive the API (we have the API-key). When we do point it:
-- four A records on `@` to `185.199.108.153`, `.109.153`, `.110.153`, `.111.153`
-- one CNAME on `www` to `sergentisaf.github.io`
-- add a `CNAME` file containing `dogmacables.com` in the repo root
-- set custom domain in repo Settings → Pages and enable Enforce HTTPS
+Live URL: **https://dogmacables.com** (HTTPS enforced, Let's Encrypt
+cert auto-renewed by GitHub Pages, expires 2026-08-25).
+Fallback: https://sergentisaf.github.io/Dogma-Hjemmeside/
+
+DNS managed via Simply.com API (account S627516). Apex `@` has four
+A records to GitHub Pages IPs (185.199.108-111.153); `www` is a CNAME
+to `sergentisaf.github.io`; the `CNAME` file in repo root contains
+`dogmacables.com`. Simply's MX / SPF / DKIM / DMARC records are
+untouched, so mail on @dogmacables.com still flows through Simply.
+The wildcard `*` A record was deleted so random subdomains return
+NXDOMAIN instead of landing on Simply's parking page.
 
 ## Don't
 
