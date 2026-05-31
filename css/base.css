@@ -674,6 +674,39 @@ body.page-home .services {
   }
 }
 
+.services-info {
+  border-top: 1px solid var(--border);
+}
+
+.services-info .container {
+  max-width: 720px;
+}
+
+.services-info p {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1.4rem;
+}
+
+.services-info .services-intro {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.services-footnote {
+  font-size: 0.92rem !important;
+  font-style: italic;
+  color: var(--text-muted) !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.services-subheading {
+  text-align: center;
+  margin: 1rem 0 1.6rem;
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+}
+
 /* ===== Home-page contact section ===== */
 .home-contact {
   background: var(--bg);
